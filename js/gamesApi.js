@@ -2,22 +2,36 @@
 
 import {ui} from "./ui.js"
 import {detailsApi} from "./details.js"
+import {search} from './search.js'
 
 export class gamesApi{
     constructor(){
+        this.ui = new ui();
+        this.searchClass = new search();
+        this.getGames('mmorpg');
+        this.cardsArr = [];
+        this.allGamesArr = [];
+        this.searchInput = document.getElementById('searchInput')
 
+        this.searchInput.addEventListener("input", () => {
+            this.detailsEvent();
+            if(this.searchInput.value == ''){
+                this.getGames('mmorpg');
+            }else{
+                this.searchClass.getSearchedGames();
+            }
+        });
+        
         //main navbar action
-        document.querySelectorAll('header .nav-link').forEach((link) => {
+        document.querySelectorAll('.home-nav .nav-link').forEach((link) => {
             link.addEventListener('click', (e) => {
-                document.querySelector('header .nav-link.active').classList.remove('active')
-                e.target.classList.add('active')
+                document.querySelector('.home-nav .nav-link.activee').classList.remove('activee')
+                e.target.classList.add('activee')
             })
         })
 
-
-
         //scrolling spy
-        this.homeNavLinks = document.querySelectorAll('nav .nav-link');
+        this.homeNavLinks = document.querySelectorAll('.home-nav .nav-link');
         this.sections = document.querySelectorAll('.sec')
         this.currentSection = 'home';
 
@@ -29,8 +43,8 @@ export class gamesApi{
             })
             this.homeNavLinks.forEach((navLink) => {
                 if(navLink.href.includes(this.currentSection)){
-                    document.querySelector('nav .nav-link.active').classList.remove('active')
-                    navLink.classList.add('active')
+                    document.querySelector('.home-nav .nav-link.activee').classList.remove('activee')
+                    navLink.classList.add('activee')
                 }
             })
         })
@@ -66,8 +80,6 @@ export class gamesApi{
             }
         }) 
 
-        this.searchInput = document.getElementById('searchInput')
-
         //! stop form default behavior
         document.querySelectorAll('form').forEach((a)=>{
             a.addEventListener('submit', (e)=>{
@@ -75,11 +87,6 @@ export class gamesApi{
                 $('input , textarea').val('')
             })
         })
-
-        this.ui = new ui();
-        this.getGames('mmorpg');
-        this.cardsArr = [];
-        this.allGamesArr = [];
         
         //games navbar action
         document.querySelectorAll('.main-section .nav-link').forEach((link) => {
@@ -139,6 +146,8 @@ export class gamesApi{
 
 
 
+
+
     async getGames(category){
         document.querySelector('.loading').classList.remove('d-none')
         $('#gamesContainer').fadeOut(0)
@@ -158,21 +167,31 @@ export class gamesApi{
 
         this.ui.displayGames(this.cardsArr,this.searchInput.value)
 
-        this.searchInput.addEventListener("input", () => {
-          this.ui.displayGames(this.cardsArr , this.searchInput.value);
-        });
-
-        this.searchInput.addEventListener('focus',()=>{
-            document.querySelector('.alert').classList.remove('d-none')
-        })
-        
-        this.searchInput.addEventListener('blur',()=>{
-            document.querySelector('.alert').classList.add('d-none')
-        })
-
+        this.detailsEvent();
         document.querySelector('.loading').classList.add('d-none')
         $('#gamesContainer').fadeIn(600 )
         $('.contact-section').removeClass('opacity-0')
     }
+
+
+
+    detailsEvent(){
+        document.querySelectorAll('.show-details').forEach((card) => {
+            card.addEventListener('click', (e) => {
+                $('body').addClass('overflow-hidden')
+                $('header, .home-section , .about-section , .contact-section , .main-section').addClass('opacity-0')
+                let id = card.getAttribute('gameid')
+                this.showDetailes(id)
+            })
+        })
+    }
+
+    async showDetailes(idGame) {
+        const details = await new detailsApi().getDetails(idGame);
+            $('.details-section').fadeIn(500)
+        
+    }
 }
+
+
 

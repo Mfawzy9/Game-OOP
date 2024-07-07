@@ -283,7 +283,7 @@ header nav{
   letter-spacing: 2px;
 }
 
-.home-nav .nav-link.active,
+.home-nav .nav-link.activee,
 .home-nav .nav-link:hover{
   background-color: rgb(2, 111, 148) !important;
   border-radius: 5px;

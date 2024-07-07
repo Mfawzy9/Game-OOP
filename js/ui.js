@@ -1,7 +1,5 @@
 /// <reference types="../@types/jquery" />
 
-import {detailsApi} from './details.js'
-
 export class ui {
     constructor(){
       this.year = new Date().getFullYear();
@@ -118,26 +116,7 @@ export class ui {
           this.nextBtn.classList.add('disabled');
         }
         
-        this.detailsEvent();
     }
-
-
-    detailsEvent(){
-      document.querySelectorAll('.show-details').forEach((card) => {
-          card.addEventListener('click', (e) => {
-              $('body').addClass('overflow-hidden')
-              $('header, .home-section , .about-section , .contact-section , .main-section').addClass('opacity-0')
-              let id = card.getAttribute('gameid')
-              this.showDetailes(id)
-          })
-      })
-  }
-
-  async showDetailes(idGame) {
-      const details = await new detailsApi().getDetails(idGame);
-          $('.details-section').fadeIn(500)
-      
-  }
 
     //prev pagination btn
     prevPage(){
