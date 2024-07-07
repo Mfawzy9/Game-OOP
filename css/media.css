@@ -1,0 +1,37 @@
+
+@media screen and (max-width : 575px){
+
+    .main-nav ul{
+        gap: unset !important;
+    }
+
+    .main-nav .nav-link{
+        font-size: 12px;
+    }
+
+    .up{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 991px){
+    header nav .navbar-nav{
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width : 767px){
+
+    .content-container{
+        background: rgb(0 0 0/ 52%);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+}
+
+

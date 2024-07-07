@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game OOP</title>
+  <link rel="shortcut icon" href="media/imgs/fav.png" type="image/x-icon">
+  <!--bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!--fontawesome-->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <!--main css file-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--media query-->
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body class="bg-color" >
+
+
+
+  <header>
+    <nav id="navbar-example"
+    class="home-nav navbar navbar-expand-lg nav-bg position-fixed top-0 start-0 end-0 z-3 ">
+    
+    <div class="container">
+      <a class="navbar-brand text-white" href="#"><img src="media/imgs/freetogame-logo.png" class="me-2" height="45"
+          alt="">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar text-white"></span>
+        <span class="toggler-icon middle-bar text-white"></span>
+        <span class="toggler-icon bottom-bar text-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase ">
+          <li class="nav-item">
+            <a class="nav-link text-white active rounded p-2 px-3" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white rounded p-2 px-3" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white rounded p-2 px-3" href="#games">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white rounded p-2 px-3" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+  <div class="start-up d-flex justify-content-center align-items-center">
+    <svg
+    fill="#f00"
+    class="ut-shape"
+    width="100%"
+    height="100vh"
+    preserveAspectRatio="none"
+    viewBox="0 0 1440 800"
+    xmlns:pathdata="http://www.unitedthemes.com/"
+    style="transform-origin: 50% 0%"
+  >
+    <path
+      d="M -30.45,-57.86 -30.45,442.6 53.8,443.8 53.8,396.3 179.5,396.3 179.5,654.7 193.3,654.7 193.3,589.1 253.1,589.1 253.1,561.6 276.1,561.6 276.1,531.2 320.6,531.2 320.6,238.6 406.5,238.6 406.5,213.9 435.6,213.9 435.6,246.2 477,246.2 477,289.9 527.6,289.9 527.6,263.3 553.7,263.3 553.7,280.4 592,280.4 592,189.2 742.3,189.2 742.3,259.5 762.2,259.5 762.2,103.7 776,103.7 776,77.11 791.3,77.11 791.3,18.21 852.7,18.21 852.7,86.61 871.1,86.61 871.1,231 878.7,240.5 878.7,320.3 891,320.3 891,434.3 923.2,434.3 923.2,145.5 940.1,145.5 940.1,117 976.9,117 976.9,139.8 1031,139.8 1031,284.2 1041,284.2 1041,242.4 1176,242.4 1176,282.3 1192,282.3 1192,641.4 1210,641.4 1210,692.7 1225,692.7 1225,599.6 1236,599.6 1236,527.4 1248,527.4 1248,500.8 1273,500.8 1273,523.6 1291,523.6 1291,652.8 1316,652.8 1316,533.1 1337,533.1 1337,502.7 1356,502.7 1356,523.6 1414,523.6 1414,491.3 1432,491.3 1432,523.6 1486,523.6 1486,-57.86 Z"
+      pathdata:id="M -30.45,-57.86 -30.45,442.6 53.8,443.8 53.8,396.3 179.5,396.3 179.5,654.7 193.3,654.7 193.3,589.1 253.1,589.1 253.1,561.6 276.1,561.6 276.1,531.2 320.6,531.2 320.6,238.6 406.5,238.6 406.5,213.9 435.6,213.9 435.6,246.2 477,246.2 477,289.9 527.6,289.9 527.6,263.3 553.7,263.3 553.7,280.4 592,280.4 592,189.2 742.3,189.2 742.3,259.5 762.2,259.5 762.2,103.7 776,103.7 776,77.11 791.3,77.11 791.3,18.21 852.7,18.21 852.7,86.61 871.1,86.61 871.1,231 878.7,240.5 878.7,320.3 891,320.3 891,434.3 923.2,434.3 923.2,145.5 940.1,145.5 940.1,117 976.9,117 976.9,139.8 1031,139.8 1031,284.2 1041,284.2 1041,242.4 1176,242.4 1176,282.3 1192,282.3 1192,641.4 1210,641.4 1210,692.7 1225,692.7 1225,599.6 1236,599.6 1236,527.4 1248,527.4 1248,500.8 1273,500.8 1273,523.6 1291,523.6 1291,652.8 1316,652.8 1316,533.1 1337,533.1 1337,502.7 1356,502.7 1356,523.6 1414,523.6 1414,491.3 1432,491.3 1432,523.6 1486,523.6 1486,-57.86 Z"
+    ></path>
+  </svg>
+  <div class="loaderr"></div>
+
+  </div>
+
+  <!--home section-->
+  <section id="home" class="sec home-section min-vh-100 pt-5 d-flex align-items-center ">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 content-container">
+          <div class="content text-center text-md-start">
+            <h1 class="text-white">Your GAME store where <br> <span class="text-primary">EVERYTHING</span> is FREE!</h1>
+            <p class="text-secondary my-3">We built FreeToGame to create an ecosystem <br> that brings all the best Free-to-Play Games</p>
+            <a class="btn btn-outline-primary px-5 py-2 fw-bold " href="https://www.freetogame.com/register" target="_blank" >Join Us</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--about section-->
+  <section id="about" class="sec about-section py-5 ani">
+    <div class="container py-5 my-5">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-xl-6">
+          <div class="content text-center text-md-start">
+            <h2 class="text-color h1 position-relative pb-2 d-inline-block">About Us</h2>
+            <p class="text-secondary my-2 text-start lead">We are a small group of passionate gamers and tech enthusiasts. Our independent company,
+              <a class="text-decoration-none" href="https://www.digiwallsmedia.com/" target="_blank">Digiwalls Media</a>, is fully bootstrapped and our team currently works remotely from United States, Europe and even Asia.
+            
+              We are as indie as it gets, but for more than 13 years we have worked and collaborated with incredible companies
+              including Microsoft, Sony Interactive Entertainment, Nintendo, Square Enix, Paradox Interactive, Warner Bros
+              Entertainment, Bandai Namco, Wargaming, Perfect World Entertainment, Nexon, Webzen, Gamigo and hundreds more.
+            
+              Right now, we are working closely with the leading free-to-play gaming companies in the world to bring you the best
+              free-to-play has to offer.</p>
+          </div>
+        </div>
+        <div class="col-12 col-xl-5">
+          <div class="about-img">
+            <img src="media/imgs/about.png" alt="" class="w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--games section-->
+  <section id="games" class="sec main-section py-4 position-relative ani">
+
+    <div class="container pt-5">
+      <header class="main-header">
+        <div class="main-tite d-flex justify-content-center">
+          <h2 class="text-color h1 position-relative pb-2 ">Games</h2>
+        </div>
+    
+        <div class="main-nav my-3">
+          <ul class="nav col-12 justify-content-center gap-3 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link text-white active" aria-current="page" href="" data-category="mmorpg">mmorpg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="" data-category="shooter">shooter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="" data-category="sailing">sailing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="" data-category="permadeath">permadeath</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="" data-category="superhero">superhero</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="" data-category="pixel">pixel</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="container search-container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+              <form class="search-box d-flex flex-column gap-3 border-bottom pb-3 mb-md-3 to-left" style="animation-delay: 1s;">
+                <div class="d-flex gap-1">
+                  <input id="searchInput" type="search" class="form-control" placeholder="search by Game name">
+                  <span id="searchSubmit" class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+                <p class="alert alert-info text-center p-2 m-0 d-none"><i class="fa-solid fa-circle-info"></i> Choose your category before you search</p>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+      </header>
+    </div>
+
+    <main class="mt-2 ">
+      <div class="container">
+        <nav aria-label="Page navigation example" id="pagination">
+          <ul class="pagination justify-content-between">
+            <li class="page-item ">
+              <button class="page-link fs-4" role="button" id="prev"><i class="fa-solid fa-arrow-left-long"></i> Previous</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link fs-4" role="button"  id="next">Next <i class="fa-solid fa-arrow-right-long"></i></button>
+            </li>
+          </ul>
+        </nav>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="gamesContainer">
+
+        </div>
+
+      </div>
+    </main>
+
+  </section>
+
+
+  <!--details section-->
+  <section id="details" class="details-section p-3 position-fixed top-0 end-0 start-0 bottom-0">
+    <div class="container">
+      <div class="details-header text-white d-flex justify-content-between align-items-center p-3 mb-2">
+        <h1 class="">Game Details</h1>
+        <i class="fa-solid fa-xmark fs-2 x" role="button"></i>
+      </div>
+      <div class="game-details" id="gameDetails">
+
+        <div class="row justify-content-center gap-5 align-items-center">
+
+          <h3 class="text-white text-center fw-bold mb-5 fs-1">Neverwinter</h3>
+          <div class="col-lg-4">
+            <img class="w-100" src="https://www.freetogame.com/g/11/thumbnail.jpg" alt="" />
+            <div class=" my-3 text-center">
+              <a class="btn btn-outline-warning" href="${detailsData.game_url}" target="_blank"><i class="fa-solid fa-link"></i> Show Game</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">         
+            <h6 class=" text-capitalize text-white mb-4 h1 about-title position-relative pb-2">Minimum Requirements</h6>
+            <div class="row text-white">
+              <div class="col-lg-6">
+                <h6 class="h4 text-secondary">Operation System</h6>
+                <p class="h6">Windows 7 64-bit</p>
+                <hr>
+                <h6 class="h4 text-secondary">Memory</h6>
+                <p class="h6">4 GB RAM</p>
+                <hr>
+                <h6 class="h4 text-secondary">Storage</h6>
+                <p class="h6">30 GB available space</p>
+              </div>
+              <div class="col-lg-6">
+                <h6 class="h4 text-secondary">Processor</h6>
+                <p class="h6">Intel Core i5-750</p>
+                <hr>
+                <h6 class="h4 text-secondary">Graphics</h6>
+                <p class="h6">NVIDIA GeForce GTX 460</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="text-white h1 about-title position-relative pb-2 ">Informations</h3>
+            <div class="row text-white">
+              <div class="col-lg-6">
+                <h6 class="h4 text-secondary">Category</h6>
+                <p class="h6">Shooter</p>
+                <hr>
+                <h6 class="h4 text-secondary">Platform</h6>
+                <p class="h6">Windows</p>
+                <hr>
+                <h6 class="h4 text-secondary">publisher</h6>
+                <p class="h6">Activision</p>
+              </div>
+              <div class="col-lg-6">
+                <h6 class="h4 text-secondary">developer</h6>
+                <p class="h6">Infinity Ward</p>
+                <hr>
+                <h6 class="h4 text-secondary">release date</h6>
+                <p class="h6">2020-03-10</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-2.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            <h3 class="text-white h1 about-title position-relative pb-2">About</h3>
+            <p class="game-desc lead text-white">If you’re a fan of Dungeons and Dragons, have I got a game for you! Neverwinter,
+              developed by Cryptic Studios and published by Perfect World Entertainment, is based on the critically acclaimed
+              fantasy role playing game and the best part is ­ it’s free to play. In the world of Neverwinter, you will explore and
+              defend one of the most beloved cities from the Dungeons and Dragons Forgotten Realms Campaign Setting, as it rises
+              from the ashes of total destruction. In this totally immersive MMORPG you will go from the besieged walls of the city,
+              to the subterranean passageways and search for forgotten secrets and lost treasure along the way. Neverwinter is
+              completely free to play, from the very first level, all the way up to the level cap, so anyone is able to experience
+              the engaging action and combat it brings. You don’t have to worry about tab­targeting or auto­attacking to defeat your
+              enemies, Neverwinter provides an amazing combat experience where every action will require planning and feel visceral
+              and look spectacular. Neverwinter also comes with Foundry, which is a dynamic tool set that will provide you with the
+              game assets and a sandbox environment that will allow you to create your own adventures ­ and when you are ready to
+              unveil your creation to the world ­ you are able to hook it up directly to the existing work so everyone else in the
+              community can experience it as well! Whether you are familiar with Dungeons and Dragons from the tabletop game or from
+              the novels, Neverwinter has recreated many of the iconic classes, locations and encounters that you will know and
+              love! You might choose to go on an adventure as a mighty Guardian Fighter, choose to deceive foes as a Trickster
+              Rogue, or follow the righteous path as a Devoted Cleric, but whatever journey you decide to take in Neverwinter you
+              will face Kobolds, Beholders, Mimics and many other creatures from the Dungeons and Dragons universe, and you will
+              surely feel right at home!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--contact section-->        
+  <section id="contact" class="sec contact-section py-5 sec-bg-color ani">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-lg-6">
+          <div class="contact-img">
+            <img src="media/imgs/contact.png" class="w-100" alt="">
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="contact-form">
+            <h2 class="text-color h1 position-relative pb-2 d-inline-block my-4">Contact Us</h2>
+            <form>
+              <div class="row gy-3">
+                <div class="col-12">
+                  <input class="form-control bg-color  py-2" type="text" placeholder="Your Name" name="user name" required>
+                </div>
+                <div class="col-12">
+                  <input class="form-control bg-color  py-2" type="email" placeholder="Your Email" name="email" required>
+                </div>
+                <div class="col-12">
+                  <input class="form-control bg-color  py-2" type="text" placeholder="Subject" name="subject" required>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control bg-color  py-2" rows="5" placeholder="Message" name="message" required></textarea>
+                </div>
+                <div class="col-12 ">
+                  <button class="btn btn-primary text-white rounded px-3 py-2" type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-3 site-footer">
+  </footer>
+
+
+  <div class="d-none loading position-fixed top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center w-100 h-100 bg-black bg-opacity-75 z-3">
+    <span class="loader"></span>
+  </div>
+
+      <!-- fa-moon   fa-sun -->
+      <div role="button" id="mode">
+        <i class="mode-icon fa-regular fa-sun fa-xl text-white"></i>
+      </div>
+
+  <a class="up opacity-0" role="button"><i class="fa-solid fa-arrow-up"></i></a>
+
+
+
+  <!--jquery-->
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <!--bootstrap-->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!--fontawesome-->
+  <script src="js/all.min.js"></script>
+  <!--main js file-->
+  <script src="js/index.js" type="module"></script>
+</body>
+
+</html>
