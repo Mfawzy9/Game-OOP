@@ -92,6 +92,7 @@ export class gamesApi{
         document.querySelectorAll('.main-section .nav-link').forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
+                this.searchInput.value = ''
                 $('.contact-section').addClass('opacity-0')
                 this.ui.currentPage = 1;
                 document.querySelector('.main-section .nav-link.active').classList.remove('active')
