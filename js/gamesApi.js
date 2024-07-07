@@ -14,9 +14,9 @@ export class gamesApi{
         this.searchInput = document.getElementById('searchInput')
 
         this.searchInput.addEventListener("input", () => {
-            this.detailsEvent();
+            this.currentCategory = document.querySelector('.main-nav .nav-link.active').getAttribute('data-category')
             if(this.searchInput.value == ''){
-                this.getGames('mmorpg');
+                this.getGames(this.currentCategory);
             }else{
                 this.searchClass.getSearchedGames();
             }
@@ -144,10 +144,6 @@ export class gamesApi{
         })
     }
 
-
-
-
-
     async getGames(category){
         document.querySelector('.loading').classList.remove('d-none')
         $('#gamesContainer').fadeOut(0)
@@ -167,30 +163,12 @@ export class gamesApi{
 
         this.ui.displayGames(this.cardsArr,this.searchInput.value)
 
-        this.detailsEvent();
+        // this.detailsEvent();
         document.querySelector('.loading').classList.add('d-none')
         $('#gamesContainer').fadeIn(600 )
         $('.contact-section').removeClass('opacity-0')
     }
 
-
-
-    detailsEvent(){
-        document.querySelectorAll('.show-details').forEach((card) => {
-            card.addEventListener('click', (e) => {
-                $('body').addClass('overflow-hidden')
-                $('header, .home-section , .about-section , .contact-section , .main-section').addClass('opacity-0')
-                let id = card.getAttribute('gameid')
-                this.showDetailes(id)
-            })
-        })
-    }
-
-    async showDetailes(idGame) {
-        const details = await new detailsApi().getDetails(idGame);
-            $('.details-section').fadeIn(500)
-        
-    }
 }
 
 

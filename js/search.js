@@ -1,5 +1,6 @@
 
-import{detailsApi} from './details.js'
+
+import {ui} from './ui.js'
 
 export class search{
     constructor(){
@@ -8,25 +9,14 @@ export class search{
         this.searchInput = document.getElementById('searchInput')
 
         this.allCardsArr = [];
-
-        document.querySelectorAll('.main-section .nav-link').forEach((link) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                $('.contact-section').addClass('opacity-0')
-                this.ui.currentPage = 1;
-                document.querySelector('.main-section .nav-link.active').classList.remove('active')
-                e.target.classList.add('active')
-                this.getGames(e.target.getAttribute('data-category'))
-            })
-        })
     }
 
     async getSearchedGames(){
         const options2 = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': 'c18bb8f188mshf6c3019420216d1p101a71jsnd661387b83fe',
-                'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
+              'x-rapidapi-key': 'c18bb8f188mshf6c3019420216d1p101a71jsnd661387b83fe',
+              'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
             }
         };
 
@@ -79,24 +69,8 @@ export class search{
           </div>`
       }).join("");
 
-      this.detailsEvent();
+      new ui().detailsEvent();
 
     }
 
-    detailsEvent(){
-        document.querySelectorAll('.show-details').forEach((card) => {
-            card.addEventListener('click', (e) => {
-                $('body').addClass('overflow-hidden')
-                $('header, .home-section , .about-section , .contact-section , .main-section').addClass('opacity-0')
-                let id = card.getAttribute('gameid')
-                this.showDetailes(id)
-            })
-        })
-    }
-  
-    async showDetailes(idGame) {
-        const details = await new detailsApi().getDetails(idGame);
-            $('.details-section').fadeIn(500)
-        
-    }
 }
