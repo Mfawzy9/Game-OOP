@@ -71,6 +71,9 @@ export class search{
 
       new ui().detailsEvent();
 
+      new ui().startVideo();
+      new ui().stopVideo();
+
     }
 
 }
