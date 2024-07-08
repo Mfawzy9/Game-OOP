@@ -51,11 +51,13 @@ export class gamesApi{
 
         // dom ready
         $(()=>{
+            $(window).scrollTop(0);
             $('.loaderr').fadeOut(1200,()=>{
                 $('.start-up').animate({top: '-200%'} , 1000,function(){
                     $('.home-section .container').css('cssText' , `
                             animation: fade-in 1s both;`)
                             setTimeout(function(){
+                                $('#about , #games , #contact , #footer').removeClass('d-none')
                                 $('body').css('overflowY' , 'auto')
                                 $('.start-up').remove()
                             },1000)

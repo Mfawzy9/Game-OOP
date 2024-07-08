@@ -28,7 +28,7 @@ body .start-up {
   background-color: var(--sec-bg-color);
   height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   /* animation-name: a1; */
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
