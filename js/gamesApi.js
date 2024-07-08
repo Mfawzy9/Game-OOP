@@ -1,7 +1,6 @@
 /// <reference types="../@types/jquery" />
 
 import {ui} from "./ui.js"
-import {detailsApi} from "./details.js"
 import {search} from './search.js'
 
 export class gamesApi{
@@ -117,16 +116,16 @@ export class gamesApi{
         //! dark mode//////
         this.html = document.querySelector('html');
 
-        if(localStorage.getItem('theme') == 'dark'){
-            this.html.setAttribute('data-theme' , 'dark')
-            $('.mode-icon').addClass('fa-sun text-white').removeClass('fa-moon text-black');
-            $('#pagination').attr('data-bs-theme', 'dark')
-            $('.search-container').attr('data-bs-theme', 'dark')
-        }else{
+        if(localStorage.getItem('theme') == 'light'){
             this.html.setAttribute('data-theme' , 'light')
             $('.mode-icon').addClass('fa-moon text-black').removeClass('fa-sun text-white');
             $('#pagination').attr('data-bs-theme', 'light')
             $('.search-container').attr('data-bs-theme', 'light')
+        }else{
+            this.html.setAttribute('data-theme' , 'dark')
+            $('.mode-icon').addClass('fa-sun text-white').removeClass('fa-moon text-black');
+            $('#pagination').attr('data-bs-theme', 'dark')
+            $('.search-container').attr('data-bs-theme', 'dark')
         }
 
         $('#mode').on("click" , ()=>{
