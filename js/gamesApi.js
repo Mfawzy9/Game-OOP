@@ -8,7 +8,7 @@ export class gamesApi{
     constructor(){
         this.ui = new ui();
         this.searchClass = new search();
-        this.getGames('mmorpg');
+        this.getGames('pvp');
         this.cardsArr = [];
         this.allGamesArr = [];
         this.searchInput = document.getElementById('searchInput')

@@ -1,12 +1,17 @@
 
-@media screen and (max-width : 575px){
+@media screen and (max-width : 542px){
 
     .main-nav ul{
         gap: unset !important;
     }
 
+    .main-header-container{
+        padding-inline: 0;
+    }
+
     .main-nav .nav-link{
         font-size: 12px;
+        padding: 5px;
     }
 
     .up{

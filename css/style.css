@@ -86,13 +86,11 @@ body .start-up {
 .ani{
   position: relative;
   left: -10%;
-  /* transform: translateX(150px); */
   opacity: 0;
   transition: all 1.5s ease  !important;
 }
 
 .ani.active{
-  /* transform: translateX(0); */
   left: 0;
   opacity: 1;
 }
@@ -332,7 +330,6 @@ header nav{
 .main-nav{
   background-color: rgb(50 50 50);
   box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
-  /* margin-top: -30px; */
   width: fit-content;
   margin: 0 auto;
   padding: 10px;
@@ -340,14 +337,16 @@ header nav{
 }
 
 .main-nav .nav-link{
-  transition: color 0.4s;
-  font-size: 15px;
-  padding: 5px;
+  transition: 0.4s;
+  font-size: 18px;
+  padding: 8px;
 }
 
 .main-nav .nav-link.active,
 .main-nav .nav-link:hover{
-  color: #09c !important;
+  background-color: rgb(2, 111, 148) !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(2, 111, 148) !important;
 }
 
 .main-section .card{
