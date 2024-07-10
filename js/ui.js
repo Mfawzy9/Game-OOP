@@ -216,6 +216,7 @@ export class ui {
                 <hr>
                 <h6 class="h4 text-secondary">Storage</h6>
                 <p class="h6">${detailsData.hasOwnProperty('minimum_system_requirements') ? detailsData.minimum_system_requirements.storage : 'Not Available'}</p>
+                <hr>
               </div>
               <div class="col-lg-6">
                 <h6 class="h4 text-secondary">Processor</h6>
@@ -223,6 +224,7 @@ export class ui {
                 <hr>
                 <h6 class="h4 text-secondary">Graphics</h6>
                 <p class="h6">${detailsData.hasOwnProperty('minimum_system_requirements') ? detailsData.minimum_system_requirements.graphics : 'Not Available'}</p>
+                <hr>
               </div>
             </div>
           </div>
@@ -243,6 +245,7 @@ export class ui {
                 <hr>
                 <h6 class="h4 text-secondary">publisher</h6>
                 <p class="h6">${detailsData.publisher}</p>
+                <hr>
               </div>
               <div class="col-lg-6">
                 <h6 class="h4 text-secondary">developer</h6>
@@ -250,6 +253,7 @@ export class ui {
                 <hr>
                 <h6 class="h4 text-secondary">release date</h6>
                 <p class="h6">${detailsData.release_date}</p>
+                <hr>
               </div>
             </div>
           </div>
